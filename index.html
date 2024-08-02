@@ -1,11 +1,58 @@
+<!-- Our topic is (""Auto Center/Repair System: Shopper and Auto Information Management."") -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AutoFix Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 8px; }
+        .form-group button { padding: 10px 15px; }
+        .responsive { max-width: 100%; height: auto; }
+        .footer { text-align: center; margin-top: 20px; }
+    </style>
 </head>
 <body>
-    <!-- Our topic is (""Auto Center/Repair System: Shopper and Auto Information Management."") -->
+    <div class="container">
+        <header>
+            <h1>AutoFix Solutions</h1>
+            <img src="logo.png" alt="AutoFix Solutions Logo" class="responsive">
+        </header>
+        <form id="customerForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number" required pattern="\d{10}">
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+                <button type="button" onclick="changeFontSize()">Change Font Size</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <p>Group Members: John Doe (123456), Jane Smith (789012)</p>
+        </footer>
+    </div>
+    <script>
+        function changeFontSize() {
+            document.body.style.fontSize = (document.body.style.fontSize === '16px') ? '20px' : '16px';
+        }
+
+        document.getElementById('customerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
 </body>
 </html>
