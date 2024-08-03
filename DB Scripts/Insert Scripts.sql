@@ -3,7 +3,7 @@ INSERT INTO Customers (name, email, phone_number) VALUES
 ('Sarthak Gupta', 'sarthak@gmail.com', '9794612124'),
 ('Shakila Sam', 'shak@gmail.com', '7856324568'),
 ('Virat Kohli', 'vinit@gmail.com', '4445556666'),
-('Rohit Sharma', 'tom@gmail.com', '7778889999');
+('Rohit Sharma', 'rohit@gmail.com', '7778889999');
 
 INSERT INTO Parts ( name, price, stock) VALUES
 ('Oil Filter', 15.99, 50),
