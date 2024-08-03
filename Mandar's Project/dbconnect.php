@@ -3,7 +3,7 @@
 $host="localhost:3306";
 $username="root";
 $pass="";
-$db="thenormalizers_computershop";
+$db="auto_fixers";
  
 $conn=mysqli_connect($host,$username,$pass,$db);
 if(!$conn){
