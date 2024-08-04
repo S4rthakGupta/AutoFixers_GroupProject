@@ -2,17 +2,15 @@
 //include connection file 
 include "dbconnect.php";
 
-
-
 $itemID = $_POST['hdnId'];
-$itemName = $_POST['editmodel'];
+$name = $_POST['editname'];
 $brand = $_POST['editbrand'];
 $description = $_POST['editdescription'];
 $price = $_POST['editprice'];
 
 // Prepare and bind
-$stmt = $conn->prepare("UPDATE Items SET ItemName=?, Brand=?, ItemDescription=?, Price=? WHERE ItemID=?");
-$stmt->bind_param("sssdi", $itemName, $brand, $description, $price, $itemID);
+$stmt = $conn->prepare("UPDATE Parts SET name=?, price=?, stock=? WHERE ItemID=?");
+$stmt->bind_param("sssdi", $name, $brand, $description, $price, $itemID);
 
 // Execute the query
 if ($stmt->execute()) {

@@ -3,14 +3,14 @@
 include 'dbconnect.php';
 
 // Retrieve POST data
-$customerId = $_POST['editId'];
+$customer_id = $_POST['editId'];
 $name = $_POST['editname'];
 $email = $_POST['editemail'];
-$phone = $_POST['editphone'];
+$phone_number = $_POST['editphone'];
 
 // Prepare and bind
-$stmt = $conn->prepare("UPDATE Customers SET CustomerName=?, Email=?, Phone=? WHERE CustomerID=?");
-$stmt->bind_param("sssi", $name, $email, $phone, $customerId);
+$stmt = $conn->prepare("UPDATE Customers SET name=?, phone_number=?, email=? WHERE customer_id=?");
+$stmt->bind_param("sisi", $name, $email, $phone_number, $customer_id);
 
 // Execute the query
 if ($stmt->execute()) {
