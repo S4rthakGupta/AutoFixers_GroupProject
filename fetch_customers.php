@@ -1,6 +1,14 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Include database connection
-include 'auto_fixers.php';
+include 'db_connect.php'; // Adjust the path if necessary
+
+// Check if the connection is established
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 $sql = "SELECT * FROM Customers";
 $result = $conn->query($sql);

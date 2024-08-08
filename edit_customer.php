@@ -1,6 +1,15 @@
 <?php
+// Error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Include database connection
-include 'auto_fixers.php';
+include '../db_connect.php'; // Adjust the path if necessary
+
+// Check if the connection was successful
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve POST data
@@ -11,6 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Prepare and bind
     $stmt = $conn->prepare("UPDATE Customers SET name=?, email=?, phone_number=? WHERE customer_id=?");
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
+    }
+
     $stmt->bind_param("ssis", $name, $email, $phone, $customerId);
 
     // Execute the query

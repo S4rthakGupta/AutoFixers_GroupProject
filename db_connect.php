@@ -1,14 +1,14 @@
 <?php
-//session_start();
-$host="localhost:3306";
-$username="root";
-$pass="";
-$db="auto_fixers";
- 
-$conn=mysqli_connect($host,$username,$pass,$db);
-if(!$conn){
-	die("Database Connection Error");
+$host = "localhost";
+$username = "root";
+$pass = "";
+$db = "auto_fixers";
+
+// Create connection
+$conn = new mysqli($host, $username, $pass, $db);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
- 
- 
 ?>
