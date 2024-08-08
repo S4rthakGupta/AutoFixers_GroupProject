@@ -1,6 +1,6 @@
 <?php
 //include connection file 
-include "dbconnect.php";
+include "auto_fixers.php";
 
 $name = $_POST['name'];
 $email = $_POST['email'];
