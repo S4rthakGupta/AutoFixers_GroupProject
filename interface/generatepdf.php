@@ -41,15 +41,15 @@
     <footer>
         <div class="footerDiv">
             <ul>
-                <li>Susmi Rani</li>
+                <li>Sarthak Gupta</li>
                 <li></li>
             </ul>
             <ul>
-                <li>Mandar</li>
+                <li>Shakila Samardiwakara</li>
                 <li></li>
             </ul>
             <ul>
-                <li>Druvin</li>
+                <li>Abhishek Chachad</li>
                 <li></li>
             </ul>
         </div>
