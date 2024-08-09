@@ -1,22 +1,30 @@
 <?php
-//include connection file 
-include "auto_fixers.php";
+// Include connection file
+include "db_connect.php";
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? null;
+    $email = $_POST['email'] ?? null;
+    $phone = $_POST['phone'] ?? null;
 
-$sql = "INSERT INTO Customers (CustomerName, Email, Phone) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $name, $email, $phone);
+    // Check if any value is null
+    if ($name && $email && $phone) {
+        $sql = "INSERT INTO Customers (name, email, phone_number) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $name, $email, $phone);
 
-if ($stmt->execute()) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+        if ($stmt->execute()) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "All fields are required!";
+    }
+
+    $conn->close();
 }
-
-$stmt->close();
-
-$conn->close();
 ?>

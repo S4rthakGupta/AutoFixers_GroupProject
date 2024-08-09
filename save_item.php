@@ -1,6 +1,6 @@
 <?php
 //include connection file 
-include "auto_fixers.php";
+include "dbconnect.php";
 
 $itemName = $_POST['model'];
 $brand = $_POST['brand'];

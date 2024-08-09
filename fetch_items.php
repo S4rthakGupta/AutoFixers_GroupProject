@@ -1,31 +1,29 @@
 <?php
-// Include database connection
-include 'auto_fixers.php';
+//include connection file 
+include "dbconnect.php";
 
-$sql = "SELECT * FROM Parts";
+// Fetch data from the database
+$sql = "SELECT ItemID, ItemName, Brand, ItemDescription, Price FROM Items";
 $result = $conn->query($sql);
 
+// Output data in a table
 if ($result->num_rows > 0) {
-    echo "<table>
-            <tr>
-                <th>Item Name</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Action</th>
-            </tr>";
     while($row = $result->fetch_assoc()) {
+        $itemID = htmlspecialchars($row["ItemID"], ENT_QUOTES, 'UTF-8');
+        $itemName = htmlspecialchars($row["ItemName"], ENT_QUOTES, 'UTF-8');
+        $brand = htmlspecialchars($row["Brand"], ENT_QUOTES, 'UTF-8');
+        $itemDescription = htmlspecialchars($row["ItemDescription"], ENT_QUOTES, 'UTF-8');
+        $price = number_format($row["Price"], 2);
+        
         echo "<tr>
-                <td>" . htmlspecialchars($row["name"]) . "</td>
-                <td>$" . number_format($row["price"], 2) . "</td>
-                <td>" . htmlspecialchars($row["stock"]) . "</td>
-                <td><a href='javascript:void(0)' onclick=\"fneditItem('" . 
-                htmlspecialchars($row["part_id"]) . "', '" . 
-                htmlspecialchars($row["name"]) . "', '" . 
-                htmlspecialchars($row["price"]) . "', '" . 
-                htmlspecialchars($row["stock"]) . "')\">Edit</a></td>
+                <td>" . htmlspecialchars($row["ItemName"]) . "</td>
+                <td>" . htmlspecialchars($row["Brand"]) . "</td>
+                <td>" . htmlspecialchars($row["ItemDescription"]) . "</td>
+                <td>$" . $price . "</td>
+                <td><a href='javascript:void(0)' onclick=\"fneditItem('$itemID', '$itemName', 
+                '$brand', '$itemDescription', '$price')\">Edit</a></td>
               </tr>";
     }
-    echo "</table>";
 } else {
     echo "<tr><td colspan='4'>No items found</td></tr>";
 }
