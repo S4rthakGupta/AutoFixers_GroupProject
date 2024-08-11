@@ -38,8 +38,8 @@ CREATE TABLE Vehicles (
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
-CREATE TABLE Appointments (
-    appointment_id INT auto_increment PRIMARY KEY,
+CREATE TABLE Invoice (
+    Invoice_id INT auto_increment PRIMARY KEY,
     customer_id INT NOT NULL,
     vehicle_id INT NOT NULL,
     date DATE NOT NULL,

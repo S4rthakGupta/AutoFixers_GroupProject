@@ -26,7 +26,7 @@ INSERT INTO Vehicles (customer_id, make, model, year) VALUES
 ('4', 'Chevrolet', 'Malibu', 2016),
 ('5', 'Nissan', 'Sentra', 2019);
 
-INSERT INTO Appointments (customer_id, vehicle_id, date, service_id) VALUES
+INSERT INTO Invoice (customer_id, vehicle_id, date, service_id) VALUES
 ('1', '1', '2024-08-10', '1'),
 ('2', '2', '2024-08-12', '2'),
 ('3', '3', '2024-08-15', '3'),
