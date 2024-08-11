@@ -45,7 +45,7 @@
                 <input type="email" id="email" name="email" placeholder="Enter email id" required>
 
                 <label for="phone">Phone number:</label>
-                <input type="text" id="phone" name="phone_number" placeholder="Enter the phone number" required>
+                <input type="text" id="phone" name="phone" placeholder="Enter the phone number" required>
 
                 <button type="submit">Submit</button>
             </form>
