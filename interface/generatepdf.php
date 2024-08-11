@@ -8,8 +8,8 @@
 </head>
 <body>
     <header>
-        <a>LOGO</a>
-        <ul>
+    <a href="#" class="logo">Auto Fixers</a>
+    <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="generatepdf.php">PDF Generation</a></li>
             <li><a href="customers.php">Customer Details</a></li>

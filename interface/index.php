@@ -7,17 +7,19 @@
     <title>Order Processing</title>
 </head>
 <body>
-    <header>
-        <a>LOGO</a>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="generatepdf.php">PDF Generation</a></li>
-            <li><a href="customers.php">Customer Details</a></li>
-        </ul>
+    <header class="site-header">
+        <a href="#" class="logo">Auto Fixers</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="generatepdf.php">PDF Generation</a></li>
+                <li><a href="customers.php">Customer Details</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="banner">
-            <p>Auto Fixers</p>
+            <h1>Order Processing</h1>
         </div>
         <div class="formProduct">
             <form action="../process_order.php" method="post" class="responsive-form">
@@ -27,43 +29,38 @@
                 <select id="customer" name="customer" required>
                     <option value="">Select a customer</option>
                     <?php
-                    include '../auto_fixers.php';
-                    $sql = "SELECT CustomerID, CustomerName FROM Customers";
+                    include '../db_connect.php'; // Ensure the path is correct
+                    $sql = "SELECT customer_id, name FROM Customers";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value='" . htmlspecialchars($row['CustomerID']) . "'>" . htmlspecialchars($row['CustomerName']) . "</option>";
+                            echo "<option value='" . htmlspecialchars($row['customer_id']) . "'>" . htmlspecialchars($row['name']) . "</option>";
                         }
                     }
                     ?>
                 </select>
 
-                <h2>Select Items</h2>
                 <div id="items-container">
-                    <div class="item-row">
-                        <label for="item">Choose Item:</label>
-                        <select name="items[]" required>
-                            <option value="">Select an item</option>
-                            <?php
-                            $sql = "SELECT ItemID, ItemName, ItemDescription FROM Items";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $itemName = htmlspecialchars($row['ItemName']);
-                                    $itemDescription = htmlspecialchars($row['ItemDescription']);
-                                    echo "<option value='" . htmlspecialchars($row['ItemID']) . "'>{$itemName} - {$itemDescription}</option>";
-                                }
+                    <label for="item">Choose Item:</label>
+                    <select name="items[]" required>
+                        <option value="">Select an item</option>
+                        <?php
+                        $sql = "SELECT part_id, name FROM Parts"; // Assuming 'Parts' table instead of 'Items'
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<option value='" . htmlspecialchars($row['part_id']) . "'>" . htmlspecialchars($row['name']) . "</option>";
                             }
-                            ?>
-                        </select>
+                        }
+                        ?>
+                    </select>
 
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" name="quantities[]" min="1" required>
-                    </div>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantities[]" min="1" required>
                 </div>
 
-                <button type="button" onclick="addItemRow()">Add Another Item</button>
-                <button type="submit">Submit Order</button>
+                <button type="button" class="btn-add" onclick="addItemRow()">Add Another Item</button>
+                <button type="submit" class="btn-submit">Submit Order</button>
             </form>
         </div>
     </main>
@@ -98,14 +95,12 @@
                 <select name="items[]" required>
                     <option value="">Select an item</option>
                     <?php
-                    include '../dbconnect.php';
-                    $sql = "SELECT ItemID, ItemName, ItemDescription FROM Items";
+                    include '../db_connect.php'; // Ensure the path is correct
+                    $sql = "SELECT part_id, name FROM Parts"; // Assuming 'Parts' table instead of 'Items'
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            $itemName = htmlspecialchars($row['ItemName']);
-                            $itemDescription = htmlspecialchars($row['ItemDescription']);
-                            echo "<option value='" . htmlspecialchars($row['ItemID']) . "'>{$itemName} - {$itemDescription}</option>";
+                            echo "<option value='" . htmlspecialchars($row['part_id']) . "'>" . htmlspecialchars($row['name']) . "</option>";
                         }
                     }
                     ?>
