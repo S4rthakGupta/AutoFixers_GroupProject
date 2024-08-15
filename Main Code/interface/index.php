@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 
-<! -- 8980277 Mandar Sankhe
-8961944 Susmi Rani
-8969031 Dhruvinkumar Jayani -->
+<! -- 8886070 Shakila Samaradiwakara
+Sarthak Gupta
+Abhishek Chachad -->
 
 <html lang="en">
 <head>
@@ -86,6 +86,7 @@
             </form>
         </div>
         <div class="ListData">
+        <h2>Edit Product Details</h2>
             <table class="responsive-table">
                 <thead>
                     <tr>
