@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Customer Details</title>
+    <link href="style.css" rel="stylesheet" >
+    <title>Add/Modify Customers</title>
     <script>
-        function fneditCustomer(customerId, name, email, phone_number) {
+        function fneditCustomer(customerId, name, email, phone) {
             // Set the values of the form fields
             document.getElementById('editId').value = customerId;
             document.getElementById('editname').value = name;
             document.getElementById('editemail').value = email;
-            document.getElementById('editphone').value = phone_number;
+            document.getElementById('editphone').value = phone;
 
             // Show the hidden Edit form
             document.getElementById('edit-form').style.display = 'block';
@@ -23,11 +23,15 @@
 </head>
 <body>
     <header>
-    <a href="#" class="logo">Auto Fixers</a>
-    <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="generatepdf.php">PDF Generation</a></li>
+        <div class="storeLogo">
+            <img src="../storelogo.jpg" alt="Logo - Computer Shop">
+            <span>Auto Fixers Shop</span>
+        </div>
+        <ul>
+            <li><a href="index.php">Product Details</a></li>
             <li><a href="customers.php">Customer Details</a></li>
+            <li><a href="generatepdf.php">Bill Generation(PDF)</a></li>
+            <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
         </ul>
     </header>
     <main>
@@ -35,34 +39,34 @@
             <p>Customer Details</p>
         </div>
         <div class="formProduct">
-            <!-- Insert Form -->
             <form class="responsive-form" id="insert-form" action="../save_customer.php" method="post">
                 <h2>Enter Customer Details</h2>
+    
                 <label for="name">Customer Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter customer name" required>
-
+    
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter email id" required>
-
+    
                 <label for="phone">Phone number:</label>
                 <input type="text" id="phone" name="phone" placeholder="Enter the phone number" required>
-
-                <button type="submit">Submit</button>
+    
+                <button class="success" type="submit">Submit</button>
             </form>
 
-            <!-- Edit Form -->
             <form class="responsive-form" id="edit-form" action="../edit_customer.php" method="post" style="display: none;">
                 <h2>Edit Customer Details</h2>
+                
                 <label for="editname">Customer Name:</label>
                 <input type="text" id="editname" name="editname" placeholder="Enter customer name" required>
-
+    
                 <label for="editemail">Email:</label>
                 <input type="email" id="editemail" name="editemail" placeholder="Enter email id" required>
-
+    
                 <label for="editphone">Phone number:</label>
                 <input type="text" id="editphone" name="editphone" placeholder="Enter the phone number" required>
-
-                <button type="submit">Edit</button>
+    
+                <button class="primary" type="submit">Edit</button>
                 <input type="hidden" id="editId" name="editId">
             </form>
         </div>
@@ -88,17 +92,30 @@
         <div class="footerDiv">
             <ul>
                 <li>Sarthak Gupta</li>
+                <li></li>
             </ul>
             <ul>
                 <li>Shakila Samardiwakara</li>
+                <li></li>
             </ul>
             <ul>
                 <li>Abhishek Chachad</li>
+                <li></li>
             </ul>
         </div>
         <div class="copyright">
-            <p>Copyright 2024. All rights reserved</p>
+            <p>Copyright 2024.All rights reserved</p>
         </div>
     </footer>
+    <script>
+        let fontSizeIndex = 0;
+        const fontSizes = ['small', 'medium', 'large', 'x-large'];
+
+        function toggleFontSize() {
+            fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length;
+            document.body.style.fontSize = fontSizes[fontSizeIndex];
+            document.querySelector('button').innerText = `Font Size: ${fontSizes[fontSizeIndex]}`;
+        }
+    </script>
 </body>
 </html>

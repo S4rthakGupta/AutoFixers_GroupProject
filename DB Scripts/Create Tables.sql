@@ -1,51 +1,33 @@
+CREATE DATABASE IF NOT EXISTS auto_fixers;
+
 USE auto_fixers;
 
-
-DROP TABLE if exists Appointments;
-DROP TABLE if exists Parts;
-DROP TABLE if exists Services;
-DROP TABLE if exists Vehicles;
-DROP TABLE if exists Customers;
-
-
-CREATE TABLE Customers (
-    customer_id INT auto_increment PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    phone_number VARCHAR(15) NOT NULL
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    Phone VARCHAR(20)
 );
 
-CREATE TABLE Parts (
-    part_id INT auto_increment PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    price DECIMAL(10, 2) NOT NULL,
-    stock INT NOT NULL
+CREATE TABLE IF NOT EXISTS Orders (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderDate DATE NOT NULL,
+    CustomerID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
-CREATE TABLE Services (
-    service_id INT auto_increment PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    cost DECIMAL(10, 2) NOT NULL,
-    duration INT NOT NULL
+CREATE TABLE IF NOT EXISTS Parts (
+    PartID INT AUTO_INCREMENT PRIMARY KEY,
+    PartName VARCHAR(255) NOT NULL,
+    PartDescription TEXT,
+    Price DECIMAL(10, 2) NOT NULL
 );
 
-CREATE TABLE Vehicles (
-    vehicle_id INT auto_increment PRIMARY KEY,
-    customer_id INT NOT NULL,
-    make VARCHAR(50) NOT NULL,
-    model VARCHAR(50) NOT NULL,
-    year INT NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+CREATE TABLE IF NOT EXISTS OrderedParts (
+    OrderedPartsID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderID INT NOT NULL,
+    PartID INT NOT NULL,
+    Quantity INT NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (PartID) REFERENCES Parts(PartID) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-CREATE TABLE Invoice (
-    Invoice_id INT auto_increment PRIMARY KEY,
-    customer_id INT NOT NULL,
-    vehicle_id INT NOT NULL,
-    date DATE NOT NULL,
-    service_id INT NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id),
-    FOREIGN KEY (service_id) REFERENCES Services(service_id)
-);
-
