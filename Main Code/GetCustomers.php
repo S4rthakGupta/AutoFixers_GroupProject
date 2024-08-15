@@ -4,7 +4,7 @@
 
 
 // Include database connection
-include 'db_connect.php';
+include 'ConnectDB.php';
 
 $sql = "SELECT * FROM Customers";
 $result = $conn->query($sql);

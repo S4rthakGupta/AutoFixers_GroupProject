@@ -1,7 +1,7 @@
 <?php
 
 //include connection file 
-include "db_connect.php";
+include "ConnectDB.php";
 
 // Fetch data from the database
 $sql = "SELECT PartID, PartName, Brand, PartDescription, Price FROM Parts";
