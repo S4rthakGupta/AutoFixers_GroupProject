@@ -8,7 +8,7 @@
     <title>PDF Generation</title>
     <style>
         .formProduct {
-            max-width: 600px;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -68,7 +68,7 @@
             <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
-            <form action="../ProcessOrders.php" method="post" class="responsive-form">
+            <form class="responsive-form" action="../ProcessOrders.php" method="post" >
                 <h2>Select Customer and Products for Invoice</h2>
 
                 <label for="customer">Choose Customer:</label>
