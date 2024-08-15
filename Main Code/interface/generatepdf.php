@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Order Form</title>
     <style>
         .formProduct {
             max-width: 600px;
@@ -60,10 +60,11 @@
         <ul>
             <li><a href="index.php">Product Details</a></li>
             <li><a href="customers.php">Customer Details</a></li>
-            <li><a href="generatepdf.php">Bill Generation(PDF)</a></li>
+            <li><a href="generatepdf.php">Bill Generation (PDF)</a></li>
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
         </ul>
     </header>
+
     <main>
         <div class="banner">
             <p>Computer Store</p>
@@ -146,19 +147,19 @@
         function toggleFontSize() {
             fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length;
             document.body.style.fontSize = fontSizes[fontSizeIndex];
-            document.querySelector('button').innerText = `Font Size: ${fontSizes[fontSizeIndex]}`;
+            document.querySelector('button.font').innerText = `Font Size: ${fontSizes[fontSizeIndex]}`;
         }
 
         function addItemRow() {
-            var container = document.getElementById('items-container');
-            var newRow = document.createElement('div');
+            const container = document.getElementById('items-container');
+            const newRow = document.createElement('div');
             newRow.className = 'item-row';
             newRow.innerHTML = `
                 <label for="item">Choose Item:</label>
                 <select name="parts[]" required>
                     <option value="">Select an item</option>
                     <?php
-                    $sql = "SELECT PartID, PartName, PartDescription FROM Items";
+                    $sql = "SELECT PartID, PartName, PartDescription FROM Parts";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -171,23 +172,17 @@
                 </select>
 
                 <label for="quantity">Quantity:</label>
-                <input type="number" value="1" name="quantities[]" min="1" required>
+                <input type="number" name="quantities[]" min="1" value="1" required>
 
                 <button type="button" class="danger" onclick="removeItemRow(this)">Remove</button>
             `;
             container.appendChild(newRow);
-
-            updateRemoveButtons();
         }
 
         function removeItemRow(button) {
-            var container = document.getElementById('items-container');
+            const container = document.getElementById('items-container');
             container.removeChild(button.parentElement);
-
-           
         }
-        
-
     </script>
 </body>
 
