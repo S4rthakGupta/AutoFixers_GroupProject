@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" >
-    <title>Add/Modify Customers</title>
+    <title>Add/Edit Customers</title>
     <script>
         function fneditCustomer(customerId, name, email, phone) {
             // Set the values of the form fields
@@ -24,7 +24,7 @@
 <body>
     <header>
         <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Computer Shop">
+            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
             <span>Auto Fixers Shop</span>
         </div>
         <ul>
@@ -36,7 +36,7 @@
     </header>
     <main>
         <div class="banner">
-            <p>Customer Details</p>
+            <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
             <form class="responsive-form" id="insert-form" action="../save_customer.php" method="post">
@@ -104,7 +104,7 @@
             </ul>
         </div>
         <div class="copyright">
-            <p>Copyright 2024.All rights reserved</p>
+            <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
         </div>
     </footer>
     <script>

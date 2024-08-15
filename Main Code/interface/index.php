@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" >
-    <title>Add/Modify Items</title>
+    <title>Add/Edit Parts</title>
     <script>
         function fneditItem(itemId, itemName, brand, description, price) {
             // Set the values of the form fields
@@ -26,7 +26,7 @@
 <body>
     <header>
         <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Computer Shop">
+            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
             <span>Auto Fixers</span>
         </div>
         <ul>
@@ -47,10 +47,10 @@
                 <label for="model">Part Name:</label>
                 <input type="text" id="model" name="model" placeholder="Enter item name" required>
     
-                <label for="brand">Brand:</label>
+                <label for="brand">Trademark:</label>
                 <input type="text" id="brand" name="brand" placeholder="Enter brand name" required>
     
-                <label for="description">Description:</label>
+                <label for="description">Part Description:</label>
                 <input type="text" id="description" name="description" placeholder="Enter the description" required>
     
                 <label for="price">Price:</label>
@@ -61,15 +61,15 @@
             </form>
 
             <form class="responsive-form" style="display: none" id="edit-form" action="../edit_item.php" method="post">
-                <h2>Edit Product Details</h2>
+                <h2>Edit Part Details</h2>
                 
-                <label for="model">Item Name:</label>
+                <label for="model">Part Name:</label>
                 <input type="text" id="editmodel" name="editmodel" placeholder="Enter item name" required>
     
-                <label for="brand">Brand:</label>
+                <label for="brand">Trademark:</label>
                 <input type="text" id="editbrand" name="editbrand" placeholder="Enter brand name" required>
     
-                <label for="description">Description:</label>
+                <label for="description">Part Description:</label>
                 <input type="text" id="editdescription" name="editdescription" placeholder="Enter the description" required>
     
                 <label for="price">Price:</label>
@@ -83,11 +83,11 @@
             <table class="responsive-table">
                 <thead>
                     <tr>
-                        <th>Item Name</th>
-                        <th>Brand</th>
-                        <th>Description</th>
+                        <th>Part Name</th>
+                        <th>Trademark</th>
+                        <th>Part Description</th>
                         <th>Price</th>
-                        <th>Action</th>
+                        <th>Modify</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -114,7 +114,7 @@
             </ul>
         </div>
         <div class="copyright">
-            <p>Copyright 2024.All rights reserved</p>
+        <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
         </div>
     </footer>
     <script>

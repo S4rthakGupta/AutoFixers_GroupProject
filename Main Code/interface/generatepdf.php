@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>Order Form</title>
+    <title>PDF Generation</title>
     <style>
         .formProduct {
             max-width: 600px;
@@ -54,8 +54,8 @@
 <body>
     <header>
         <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Computer Shop">
-            <span>Computer Shop</span>
+            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
+            <span>Auto Fixers</span>
         </div>
         <ul>
             <li><a href="index.php">Product Details</a></li>
@@ -67,11 +67,11 @@
 
     <main>
         <div class="banner">
-            <p>Computer Store</p>
+            <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
             <form action="../process_order.php" method="post" class="responsive-form">
-                <h2>Select Customer and Items</h2>
+                <h2>Select Customer and Products for Invoice</h2>
 
                 <label for="customer">Choose Customer:</label>
                 <select id="customer" name="customer" required>
@@ -91,9 +91,9 @@
                 <h2>Select Items</h2>
                 <div id="items-container">
                     <div class="item-row">
-                        <label for="item">Choose Item:</label>
+                        <label for="item">Choose Product:</label>
                         <select name="parts[]" required>
-                            <option value="">Select an item</option>
+                            <option value="">Select a product</option>
                             <?php
                             $sql = "SELECT PartID, PartName, PartDescription FROM Parts";
                             $result = $conn->query($sql);
@@ -136,7 +136,7 @@
             </ul>
         </div>
         <div class="copyright">
-            <p>Copyright 2024. All rights reserved</p>
+        <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
         </div>
     </footer>
 
