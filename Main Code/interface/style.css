@@ -1,97 +1,66 @@
-body {
-    font-family: system-ui, sans-serif;
-    line-height: 1.6;
+/* Importing the google fonts to use it for the fonts in the website pages. */
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Resetting defaul browser styles and setting the box sizing as the border-box as well as the font-family which will be used in the whole body. */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Giving the background as the white colour. */
+  body {
+    background: #ffffff;
+  }
+  
+  /* Styling for the header as well as navigation starts here. */
+  /* This is consistent through all web pages. */
+  .header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 2%;
+    background: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header a {
-    font-size: 1.5rem;
-    color: #fff;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     text-decoration: none;
-    font-weight: bold;
-}
-
-header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header ul li {
-    margin-left: 1rem;
-}
-
-header ul li a {
-    color: #fff;
+    color: blue;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 800;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+  }
+  
+  .logo-span {
+    color: #f46e00;
+    font-family: "Anton SC", sans-serif;
+  }
+  
+  .navbar a {
+    display: inline-block;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #222;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background 0.3s;
-}
+    font-weight: 500;
+    margin: 0 20px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    color: #1743e3;
+  }
 
-header ul li a:hover {
-    background: #555;
-    border-radius: 5px;
-}
-
-main {
-    flex: 1;
-    padding: 2rem;
-}
-
-.banner p {
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 0;
-    padding: 1rem;
-    background: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.formProduct {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.formProduct h2 {
-    margin-top: 0;
-}
-
-label {
-    display: block;
-    margin: 0.5rem 0 0.2rem;
-}
-
-input[type="text"],
-input[type="email"],
-select {
-    width: calc(100% - 2rem);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
+  button {
     background: #003d7e;
     color: #fff;
     border: none;
@@ -105,134 +74,335 @@ button:hover {
     background: #003d7e;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+
+
+
+/* Styling the banner */
+.banner {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 20px;
     text-align: center;
+    font-size: 1.5em;
 }
 
-footer .footerDiv {
+/* Main container */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* General form styling */
+.responsive-form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+select {
+    cursor: pointer;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.success {
+    background-color: #28a745;
+}
+
+button.success:hover {
+    background-color: #218838;
+}
+
+button.primary {
+    background-color: #007bff;
+}
+
+button.primary:hover {
+    background-color: #0056b3;
+}
+
+/* Specific styles for forms */
+.formProduct {
+    margin-bottom: 30px;
+}
+
+/* Invoice items section styling */
+#items-container {
+    margin-bottom: 15px;
+}
+
+.item-row {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
 }
 
-footer .footerDiv ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 1rem;
+.item-row label,
+.item-row select,
+.item-row input {
+    flex: 1;
+    min-width: 200px;
 }
 
-footer .footerDiv ul li {
-    margin: 0.5rem 0;
+/* Table styling */
+.ListData {
+    margin-top: 20px;
 }
 
-footer .copyright p {
-    margin: 0;
-}
-
-/* Table Styles */
 .responsive-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.responsive-table thead {
+    background-color: #003366;
+    color: white;
 }
 
 .responsive-table th,
 .responsive-table td {
-    border: 1px solid #ddd;
-    padding: 0.75rem;
+    padding: 15px;
     text-align: left;
 }
 
-.responsive-table th {
-    background: #003d7e;
-    color: #fff;
-}
-
 .responsive-table tbody tr:nth-child(even) {
-    background: #f9f9f9;
+    background-color: #f2f2f2;
 }
 
 .responsive-table tbody tr:hover {
-    background: #f1f1f1;
+    background-color: #e9ecef;
 }
 
-.responsive-table td a {
-    color: #007bff;
+/* Buttons container */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer {
+    background: #000000;
+    color: #fff;
+    padding: 0px 8%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px 35px;
+  }
+  
+  .footer-section h2 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .footer-section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background: #ffffff;
+  }
+  
+  .footer-section p {
+    line-height: 1.6;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+
+  
+
+  
+  .footer-section a {
+    color: #fff;
     text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
+  }
+  
+  
+  .footer-section .links ul {
+    list-style: none;
+  }
+  
+  .footer-section .links ul li {
+    margin-bottom: 10px;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  .footer-section .links ul li a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  .footer-section .links ul li a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 4px 0;
+    border-top: 1px solid #444;
+  }
 
-.responsive-table td a:hover {
-    background: #e2e2e2;
-}
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-    header {
+    .header {
+        padding: 20px 5%;
         flex-direction: column;
         align-items: flex-start;
-    }
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 15px;
+      }
 
-    header ul {
+    
+      .navbar {
+        display: flex;
         flex-direction: column;
-        margin-top: 1rem;
-    }
-
-    header ul li {
-        margin: 0.5rem 0;
-    }
-
-    .formProduct {
-        padding: 1rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select {
         width: 100%;
+        text-align: center;
+      }
+    
+      .navbar a {
+        margin: 10px 0;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    
+      .footer-section {
+        padding: 10px;
+      }
+    
+
+      h2 {
+        font-size: 1.5em;
+    }
+
+    .item-row {
+        flex-direction: column;
+    }
+
+    .item-row label,
+    .item-row select,
+    .item-row input {
+        flex: 1;
+        min-width: 100%;
     }
 
     button {
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 5px;
+        font-size: 0.9em;
+        padding: 10px;
     }
 
-    .banner p {
-        font-size: 1.2rem;
-    }
-
-    .responsive-table th,
-    .responsive-table td {
-        font-size: 0.9rem;
+    .buttons-container {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
-    header a {
-        font-size: 1.2rem;
+    .banner {
+        font-size: 1.2em;
+        padding: 15px;
     }
 
-    header ul li a {
-        padding: 0.5rem;
+    h2 {
+        font-size: 1.2em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+        font-size: 0.8em;
     }
 
     button {
-        font-size: 0.9rem;
-        padding: 1rem;
-    }
-
-    .banner p {
-        font-size: 1rem;
+        font-size: 0.8em;
+        padding: 8px;
     }
 
     .responsive-table th,
     .responsive-table td {
-        font-size: 0.8rem;
+        padding: 10px;
+        font-size: 0.8em;
     }
 }
+@keyframes slideRight {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideTop {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
