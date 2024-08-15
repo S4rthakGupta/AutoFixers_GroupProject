@@ -14,7 +14,7 @@ $price = $_POST['editprice'];
 
 // Prepare and bind
 $stmt = $conn->prepare("UPDATE Parts SET PartName=?,Brand=?, PartDescription=?, Price=? WHERE PartID=?");
-$stmt->bind_param("ssdi", $partName, $brand, $description, $price, $partID);
+$stmt->bind_param("ssdii", $partName, $brand, $description, $price, $partID);
 
 // Execute the query
 if ($stmt->execute()) {
