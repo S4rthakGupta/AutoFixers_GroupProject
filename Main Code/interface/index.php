@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
-
 <! -- 8886070 Shakila Samaradiwakara
-Sarthak Gupta
+8961944 Sarthak Gupta
 Abhishek Chachad -->
 
 <html lang="en">
@@ -86,7 +85,6 @@ Abhishek Chachad -->
             </form>
         </div>
         <div class="ListData">
-        <h2>Edit Product Details</h2>
             <table class="responsive-table">
                 <thead>
                     <tr>

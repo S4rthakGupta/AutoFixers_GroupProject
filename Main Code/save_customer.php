@@ -14,7 +14,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $name, $email, $phone);
 
 if ($stmt->execute()) {
-    header("Location: UserInterface/customers.php"); // Replace "success.php" with your desired page
+    header("Location: interface/customers.php"); // Replace "success.php" with your desired page
     exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

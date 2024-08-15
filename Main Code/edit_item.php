@@ -3,14 +3,18 @@
 // Include the connection file 
 include "db_connect.php";
 
+
+
+
 $partID = $_POST['hdnId'];
 $partName = $_POST['editmodel'];
+$brand = $_POST['editbrand'];
 $description = $_POST['editdescription'];
 $price = $_POST['editprice'];
 
 // Prepare and bind
-$stmt = $conn->prepare("UPDATE Parts SET PartName=?, PartDescription=?, Price=? WHERE PartID=?");
-$stmt->bind_param("ssdi", $partName, $description, $price, $partID);
+$stmt = $conn->prepare("UPDATE Parts SET PartName=?,Brand=?, PartDescription=?, Price=? WHERE PartID=?");
+$stmt->bind_param("ssdi", $partName, $brand, $description, $price, $partID);
 
 // Execute the query
 if ($stmt->execute()) {
