@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<! -- 8886070 Shakila Samaradiwakara
-8961944 Sarthak Gupta
-Abhishek Chachad -->
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +27,7 @@ Abhishek Chachad -->
     <header>
         <div class="storeLogo">
             <img src="../storelogo.jpg" alt="Logo - Computer Shop">
-            <span>Computer Shop</span>
+            <span>Auto Fixers</span>
         </div>
         <ul>
             <li><a href="index.php">Product Details</a></li>
@@ -43,13 +38,13 @@ Abhishek Chachad -->
     </header>
     <main>
         <div class="banner">
-            <p>Computer Store</p>
+            <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
             <form class="responsive-form" id="insert-form" action="../save_item.php" method="post">
-                <h2>Insert Product Details</h2>
+                <h2>Insert Part Details</h2>
     
-                <label for="model">Item Name:</label>
+                <label for="model">Part Name:</label>
                 <input type="text" id="model" name="model" placeholder="Enter item name" required>
     
                 <label for="brand">Brand:</label>

@@ -101,7 +101,7 @@ class PDF extends FPDF
     function TableHeader()
     {
         $this->SetFont('Arial', 'B', 12);
-        $this->SetFillColor(200, 220, 255);
+        $this->SetFillColor(255, 102, 102);
         $this->SetTextColor(0, 0, 0);
         $this->Cell(30, 7, 'ITEM NAME', 1, 0, 'C', true);
         $this->Cell(70, 7, 'DESCRIPTION', 1, 0, 'C', true);
