@@ -30,9 +30,9 @@
             <span>Auto Fixers</span>
         </div>
         <ul>
-            <li><a href="index.php">Product Details</a></li>
-            <li><a href="customers.php">Customer Details</a></li>
-            <li><a href="generatepdf.php">Bill Generation(PDF)</a></li>
+            <li><a href="index.php">Product Data</a></li>
+            <li><a href="customers.php">Customer Information</a></li>
+            <li><a href="invoice_pdf.php">Invoice Generation (PDF)</a></li>
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
         </ul>
     </header>
