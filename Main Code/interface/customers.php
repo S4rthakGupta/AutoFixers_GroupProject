@@ -39,7 +39,7 @@
             <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
-            <form class="responsive-form" id="insert-form" action="../save_customer.php" method="post">
+            <form class="responsive-form" id="insert-form" action="../SaveCustomerDetails.php" method="post">
                 <h2>Enter Customer Details</h2>
     
                 <label for="name">Customer Name:</label>
@@ -54,7 +54,7 @@
                 <button class="success" type="submit">Submit</button>
             </form>
 
-            <form class="responsive-form" id="edit-form" action="../edit_customer.php" method="post" style="display: none;">
+            <form class="responsive-form" id="edit-form" action="../UpdateCustomer.php" method="post" style="display: none;">
                 <h2>Edit Customer Details</h2>
                 
                 <label for="editname">Customer Name:</label>
@@ -82,7 +82,7 @@
                 </thead>
                 <tbody>
                     <!-- Fetch data from mysql table -->
-                    <?php include '../fetch_customers.php'; ?>
+                    <?php include '../GetCustomers.php'; ?>
                 </tbody>
             </table>
         </div>

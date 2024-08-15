@@ -3,7 +3,7 @@
 
 
 //include connection file 
-include "db_connect.php";
+include "ConnectDB.php";
 
 $name = $_POST['name'];
 $email = $_POST['email'];

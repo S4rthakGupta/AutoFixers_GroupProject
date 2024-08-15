@@ -5,7 +5,7 @@
 //  8969031 Dhruvinkumar Jayani
 
 // Include database connection
-include 'db_connect.php';
+include 'ConnectDB.php';
 
 // Retrieve POST data
 $customerId = $_POST['editId'];

@@ -70,14 +70,14 @@
             <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
-            <form action="../process_order.php" method="post" class="responsive-form">
+            <form action="../ProcessOrders.php" method="post" class="responsive-form">
                 <h2>Select Customer and Products for Invoice</h2>
 
                 <label for="customer">Choose Customer:</label>
                 <select id="customer" name="customer" required>
                     <option value="">Select a customer</option>
                     <?php
-                    include '../db_connect.php';
+                    include '../ConnectDB.php';
                     $sql = "SELECT CustomerID, CustomerName FROM Customers";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {

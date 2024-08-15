@@ -41,7 +41,7 @@
             <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
-            <form class="responsive-form" id="insert-form" action="../save_item.php" method="post">
+            <form class="responsive-form" id="insert-form" action="../SaveItems.php" method="post">
                 <h2>Insert Part Details</h2>
     
                 <label for="model">Part Name:</label>
@@ -60,7 +60,7 @@
                 
             </form>
 
-            <form class="responsive-form" style="display: none" id="edit-form" action="../edit_item.php" method="post">
+            <form class="responsive-form" style="display: none" id="edit-form" action="../UpdateItem.php" method="post">
                 <h2>Edit Part Details</h2>
                 
                 <label for="model">Part Name:</label>
@@ -92,7 +92,7 @@
                 </thead>
                 <tbody>
                     <!-- Fetch data from mysql table -->
-                    <?php include '../fetch_items.php'; ?>
+                    <?php include '../GetItems.php'; ?>
                 </tbody>
             </table>
         </div>

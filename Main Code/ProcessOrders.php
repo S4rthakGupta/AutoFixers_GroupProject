@@ -1,7 +1,7 @@
 <?php
 
 // Include database connection
-include 'db_connect.php';
+include 'ConnectDB.php';
 
 // Include PDF generation library (e.g., FPDF)
 require 'fpdf184/fpdf.php';

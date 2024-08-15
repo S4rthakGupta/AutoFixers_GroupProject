@@ -1,7 +1,7 @@
 <?php
 
 // Include the connection file 
-include "db_connect.php";
+include "ConnectDB.php";
 
 
 
