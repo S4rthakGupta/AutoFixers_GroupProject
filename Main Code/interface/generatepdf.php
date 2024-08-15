@@ -122,15 +122,15 @@
     <footer>
         <div class="footerDiv">
             <ul>
-                <li>8980277 Mandar Sankhe</li>
+                <li>8886070 Shakila Samaradiwakara</li>
                 <li></li>
             </ul>
             <ul>
-                <li>8961944 Susmi Rani</li>
+                <li>Sarthak Gupta</li>
                 <li></li>
             </ul>
             <ul>
-                <li>8969031 Dhruvinkumar Jayani</li>
+                <li>Abhishek Chachad</li>
                 <li></li>
             </ul>
         </div>
