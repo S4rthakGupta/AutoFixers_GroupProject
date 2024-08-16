@@ -7,16 +7,16 @@
     <title>Add/Edit Customers</title>
     <script>
         function fneditCustomer(customerId, name, email, phone) {
-            // Set the values of the form fields
+            //Here we are setting the values of the form fields
             document.getElementById('editId').value = customerId;
             document.getElementById('editname').value = name;
             document.getElementById('editemail').value = email;
-            document.getElementById('editphone').value = phone;
+            document.getElementById('editphone').value = phone; 
 
-            // Show the hidden Edit form
+            //Here we -  Show the hidden Edit form
             document.getElementById('edit-form').style.display = 'block';
 
-            // Hide the insert form
+            //Here we -  Hide the insert form
             document.getElementById('insert-form').style.display = 'none';
         }
     </script>
@@ -32,9 +32,6 @@
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
             </nav>
     </header>
-        
-        
-       
 
     <main>
         <div class="banner">
@@ -43,7 +40,7 @@
         <div class="formProduct">
             <form class="responsive-form" id="insert-form" action="../SaveCustomerDetails.php" method="post">
                 <h2>Enter Customer Details</h2>
-    
+                <!-- FORM FOR INSERTING THE CUSTOMER DETAILS -->
                 <label for="name">Customer Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter customer name" required>
     
@@ -55,7 +52,7 @@
     
                 <button class="submit-btn" type="submit">Submit</button>
             </form>
-
+            <!-- FORM FOR UPDATING THE CUSTOMER DETAILS -->
             <form class="responsive-form" id="edit-form" action="../UpdateCustomer.php" method="post" style="display: none;">
                 <h2>Edit Customer Details</h2>
                 
@@ -83,7 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Fetch data from mysql table -->
+                    <!-- HERE WE ARE FETCHING THE DATA FROM THE DATABASE-->
                     <?php include '../GetCustomers.php'; ?>
                 </tbody>
             </table>
@@ -94,11 +91,10 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>About</h2>
-                <!-- It has the same logo as the navbar but with a different colour. -->
                 <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
                 <p>is dedicated to providing an exceptional car service experience</p>
             </div>
-            <!-- These are the links which are same as navbar. -->
+            <!-- Here are the links which are same as navba - FOR CONSISTENCY -->
             <div class="footer-section links">
                 <h2>Quick Links</h2>
                 <ul>
@@ -116,7 +112,7 @@
 
             </div>
         </div>
-        <!-- A copyright mark and a text on the footer. -->
+        <!-- FOOTER SECTION -->
         <div class="footer-bottom">
             &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
