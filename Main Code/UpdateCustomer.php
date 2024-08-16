@@ -1,9 +1,5 @@
 <?php
 
-//  8980277 Mandar Sankhe
-//  8961944 Susmi Rani
-//  8969031 Dhruvinkumar Jayani
-
 // Include database connection
 include 'ConnectDB.php';
 

@@ -67,7 +67,7 @@ class PDF extends FPDF
         $this->SetFont('Arial', 'I', 8);
         
         // Footer text (Names and IDs)
-        $this->Cell(0, 3, 'Mandar Sankhe 8980277 | Susmi Rani 8961944 | Dhruvinkumar Jayani 8969031', 0, 1, 'C');
+        $this->Cell(0, 3, 'Shakila Samaradiwakara 8886070 | Sarthak Gupta 8971797 | Abhishek Chachad 8971294', 0, 1, 'C');
         
         // Page number
         $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
