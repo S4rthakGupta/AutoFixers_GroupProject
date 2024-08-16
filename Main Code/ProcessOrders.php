@@ -54,22 +54,23 @@ class PDF extends FPDF
 {
     // Set font for the title "INVOICE"
     $this->SetFont('Arial', 'B', 20);
-    $this->SetTextColor(0, 0, 255); // Optional: Set title color to blue
+    $this->SetTextColor(0, 0, 0); // Optional: Set title color to blue
     $this->Cell(0, 10, 'INVOICE', 0, 1, 'C');
     $this->Ln(10); // Add some space after the title
 
     // Add the logo image
     $this->Image('auto-logo.png', 10, 20, 30); // Adjust the x, y position, and size as needed
 
-    // Set font for the company title "AUTO-FIXERS"
-    $this->SetFont('Arial', 'B', 16);
-    $this->SetTextColor(0, 0, 255); // Optional: Set color to blue
-    $this->SetXY(50, 25); // Adjust based on image position and size
-    $this->Cell(0, 10, 'AUTO-FIXERS', 0, 1, 'L'); // Align text to the left
+// Set font for the company title "AUTO-FIXERS"
+$this->SetFont('Arial', 'B', 24); // Larger font size and bold
+$this->SetTextColor(204, 153, 102); // Optional: Set color to blue
+$this->SetXY(50, 25); // Adjust based on image position and size
+$this->Cell(0, 15, 'AUTO-FIXERS', 0, 1, 'L'); // Align text to the left with larger height
+
 
     // Set font for the description
     $this->SetFont('Arial', '', 12);
-    $this->SetTextColor(0, 0, 255); // Optional: Set color to blue
+    $this->SetTextColor(0, 0, 0); // Optional: Set color to blue
     $this->SetXY(50, 35); // Adjust based on title position
     $this->MultiCell(0, 5, 'We will fix whatever you need! We will provide the best service.', 0, 'L');
 
@@ -121,53 +122,52 @@ class PDF extends FPDF
 
     // Table header
     function TableHeader()
-    {
-        // Add the "BILL TO" title above the table
-        $this->SetFont('Arial', 'B', 14);
-        $this->SetTextColor(0, 0, 255); // Set text color to blue (RGB: 0, 0, 255)
-        $this->Cell(0, 10, 'BILL TO', 0, 1, 'L');
-        $this->Ln(5); // Add some space after the title
-    
-        // Set the font and colors for the table header
-        $this->SetFont('Arial', 'B', 12);
-        $this->SetFillColor(173, 216, 230); // Set fill color to light blue (RGB: 173, 216, 230)
-        $this->SetTextColor(0, 0, 255); // Set text color to blue (RGB: 0, 0, 255)
-    
-        // Table headers
-        $this->Cell(30, 7, 'ITEM NAME', 1, 0, 'C', true);
-        $this->Cell(70, 7, 'DESCRIPTION', 1, 0, 'C', true);
-        $this->Cell(25, 7, 'UNIT COST', 1, 0, 'C', true);
-        $this->Cell(15, 7, 'QTY', 1, 0, 'C', true);
-        $this->Cell(25, 7, 'UNIT PRICE', 1, 0, 'C', true);
-        $this->Cell(30, 7, 'AMOUNT', 1, 0, 'C', true);
-        $this->Ln();
-    }
-    
-    
+{
+    // Add the "ITEM DETAILS" title above the table
+    $this->SetFont('Arial', 'B', 14);
+    $this->SetTextColor(0, 0, 0); // Set text color to black (RGB: 0, 0, 0)
+    $this->Cell(0, 10, 'ITEM DETAILS :', 0, 1, 'L');
+    $this->Ln(5); // Add some space after the title
 
-    // Table row
-    function TableRow($item)
-    {
-        $this->SetFont('Arial', '', 12);
-        
-        // Calculate the height of the ItemDescription column
-        $nb = $this->NbLines(70, $item['PartDescription']);
-        $rowHeight = 6 * $nb;
-        
-        // Print cells with the same height
-        $this->Cell(30, $rowHeight, $item['PartName'], 1);
-        
-        $x = $this->GetX();
-        $y = $this->GetY();
-        $this->MultiCell(70, 6, $item['PartDescription'], 1);
-        $this->SetXY($x + 70, $y);
-        
-        $this->Cell(25, $rowHeight, '$' . number_format($item['Price'], 2), 1, 0, 'R');
-        $this->Cell(15, $rowHeight, $item['Quantity'], 1, 0, 'C');
-        $this->Cell(25, $rowHeight, '$' . number_format($item['Price'], 2), 1, 0, 'R');
-        $this->Cell(30, $rowHeight, '$' . number_format($item['Total'], 2), 1, 0, 'R');
-        $this->Ln($rowHeight);
-    }
+    // Set the font and colors for the table header
+    $this->SetFont('Arial', 'B', 12);
+    $this->SetFillColor(255, 204, 153); // Set fill color to light orange (RGB: 255, 204, 153)
+    $this->SetTextColor(0, 0, 0); // Set text color to black (RGB: 0, 0, 0)
+
+    // Table headers
+    $this->Cell(30, 7, 'ITEM NAME', 1, 0, 'C', true);
+    $this->Cell(70, 7, 'DESCRIPTION', 1, 0, 'C', true);
+    $this->Cell(25, 7, 'UNIT COST', 1, 0, 'C', true);
+    $this->Cell(15, 7, 'QTY', 1, 0, 'C', true);
+    $this->Cell(25, 7, 'UNIT PRICE', 1, 0, 'C', true);
+    $this->Cell(30, 7, 'AMOUNT', 1, 0, 'C', true);
+    $this->Ln();
+}
+
+// Table row
+function TableRow($item)
+{
+    $this->SetFont('Arial', '', 12);
+    
+    // Calculate the height of the ItemDescription column
+    $nb = $this->NbLines(70, $item['PartDescription']);
+    $rowHeight = 6 * $nb;
+    
+    // Print cells with the same height
+    $this->Cell(30, $rowHeight, $item['PartName'], 1);
+    
+    $x = $this->GetX();
+    $y = $this->GetY();
+    $this->MultiCell(70, 6, $item['PartDescription'], 1);
+    $this->SetXY($x + 70, $y);
+    
+    $this->Cell(25, $rowHeight, '$' . number_format($item['Price'], 2), 1, 0, 'R');
+    $this->Cell(15, $rowHeight, $item['Quantity'], 1, 0, 'C');
+    $this->Cell(25, $rowHeight, '$' . number_format($item['Price'], 2), 1, 0, 'R');
+    $this->Cell(30, $rowHeight, '$' . number_format($item['Total'], 2), 1, 0, 'R');
+    $this->Ln($rowHeight);
+}
+
 
     // Calculate number of lines needed for text
     function NbLines($w, $txt)
