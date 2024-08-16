@@ -50,16 +50,34 @@ foreach ($parts as $index => $partID) {
 class PDF extends FPDF
 {
    // Add a logo at the top
-function AddLogo()
+   function AddLogo()
 {
-    // Add the logo image
-    $this->Image('auto-logo.png', 10, 10, 30); // Adjust the x, y position, and size as needed
-
-    // Move to the right to make space for the logo
+    // Set font for the title "INVOICE"
     $this->SetFont('Arial', 'B', 20);
+    $this->SetTextColor(0, 0, 255); // Optional: Set title color to blue
     $this->Cell(0, 10, 'INVOICE', 0, 1, 'C');
+    $this->Ln(10); // Add some space after the title
+
+    // Add the logo image
+    $this->Image('auto-logo.png', 10, 20, 30); // Adjust the x, y position, and size as needed
+
+    // Set font for the company title "AUTO-FIXERS"
+    $this->SetFont('Arial', 'B', 16);
+    $this->SetTextColor(0, 0, 255); // Optional: Set color to blue
+    $this->SetXY(50, 25); // Adjust based on image position and size
+    $this->Cell(0, 10, 'AUTO-FIXERS', 0, 1, 'L'); // Align text to the left
+
+    // Set font for the description
+    $this->SetFont('Arial', '', 12);
+    $this->SetTextColor(0, 0, 255); // Optional: Set color to blue
+    $this->SetXY(50, 35); // Adjust based on title position
+    $this->MultiCell(0, 5, 'We will fix whatever you need! We will provide the best service.', 0, 'L');
+
+    // Move cursor down for spacing after the logo and text
     $this->Ln(20);
 }
+
+   
 
     // Page footer
     function Footer()
