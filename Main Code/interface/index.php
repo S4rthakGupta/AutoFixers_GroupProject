@@ -115,9 +115,11 @@
             </div>
 
             <div class="footer-section contact">
-                <h2>Contact Us</h2>
-                <p><i class="fas fa-phone-alt"></i> +1 365-456-7890</p>
-                <p><i class="fas fa-envelope"></i> info@cardeals.com</p>
+            <h2>Group Members</h2>
+                <p>Shakila Samaradiwakara 8886070</p>
+                <p>Sarthak Gupta 8971797</p>
+                <p>Abhishek Chachad 8971294</p>
+
             </div>
         </div>
         <!-- A copyright mark and a text on the footer. -->
