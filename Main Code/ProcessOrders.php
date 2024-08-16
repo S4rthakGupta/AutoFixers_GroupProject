@@ -341,7 +341,7 @@ $tax = $subtotal * 0.13;
 $total = $subtotal + $tax;
 $discount = 0; // You can adjust this value or fetch it from your data
 $subtotalLessDiscount = 0;
-$shipping = 10; // Example value, adjust or fetch from your data
+$shipping = 0; // Example value, adjust or fetch from your data
 
 // Add totals to PDF
 $pdf->InvoiceTotals([
