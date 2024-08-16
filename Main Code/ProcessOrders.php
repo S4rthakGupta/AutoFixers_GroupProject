@@ -255,37 +255,37 @@ function TableRow($item)
     $xStart = $xEnd - $lineLength;
 
     // Display subtotal
-    $this->Cell(0, 6, 'SUBTOTAL: $' . number_format($totals['Subtotal'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'SUBTOTAL: $' . number_format($totals['subtotal'], 2), 0, 1, 'R');
     $this->Ln(2); // Add a small space after the row
     $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
 
     // Display discount
     $this->Ln(5); // Add space before discount
-    $this->Cell(0, 6, 'DISCOUNT: $' . number_format($totals['Discount'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'DISCOUNT: $' . number_format($totals['discount'], 2), 0, 1, 'R');
     $this->Ln(2); // Add a small space after the row
     $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
 
     // Display subtotal less discount
     $this->Ln(5); // Add space before subtotal less discount
-    $this->Cell(0, 6, 'SUBTOTAL LESS DISCOUNT: $' . number_format($totals['SubtotalLessDiscount'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'SUBTOTAL LESS DISCOUNT: $' . number_format($totals['subtotalLessDiscount'], 2), 0, 1, 'R');
     $this->Ln(2); // Add a small space after the row
     $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
 
     // Display shipping/landing
     $this->Ln(5); // Add space before shipping/landing
-    $this->Cell(0, 6, 'SHIPPING/LANDING: $' . number_format($totals['Shipping'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'SHIPPING/LANDING: $' . number_format($totals['shipping'], 2), 0, 1, 'R');
     $this->Ln(2); // Add a small space after the row
     $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
 
     // Display tax
     $this->Ln(5); // Add space before tax
-    $this->Cell(0, 6, 'TAX (13%): $' . number_format($totals['Tax'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'TAX (13%): $' . number_format($totals['tax'], 2), 0, 1, 'R');
     $this->Ln(2); // Add a small space after the row
     $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
 
     // Display total
     $this->Ln(5); // Add space before total
-    $this->Cell(0, 6, 'TOTAL: $' . number_format($totals['Total'], 2), 0, 1, 'R');
+    $this->Cell(0, 6, 'TOTAL: $' . number_format($totals['total'], 2), 0, 1, 'R');
 }
 
     
