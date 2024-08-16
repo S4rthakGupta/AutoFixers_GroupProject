@@ -107,8 +107,23 @@ $this->Cell(0, 15, 'AUTO-FIXERS', 0, 1, 'L'); // Align text to the left with lar
         $this->SetFont('Arial', '', 12);
         $this->Cell(0, 6, $customer['Email'], 0, 1);
         $this->Cell(0, 6, $customer['Phone'], 0, 1);
-        $this->Ln(10);
+        
+        // Get the current Y position
+        $y = $this->GetY();
+        
+        // Add a small vertical space before the line
+        $this->Ln(2);
+        
+        // Set line width
+        $this->SetLineWidth(0.5);
+        
+        // Draw the horizontal line
+        $this->Line(10, $this->GetY(), 200, $this->GetY());
+        
+        // Move the cursor down for the next section
+        $this->Ln(5);
     }
+    
 
     // Invoice details
     function InvoiceDetails($invoice)
