@@ -111,8 +111,8 @@
                 </div>
 
                 <div class="buttons-container">
-                    <button class="primary" type="button" onclick="addItemRow()">Add Another Item</button>
-                    <button class="success" type="submit">Submit Order</button>
+                    <button class="another-btn" type="button" onclick="addItemRow()">Add Another Item</button>
+                    <button class="submit-btn" type="submit">Submit Order</button>
                 </div>
             </form>
         </div>

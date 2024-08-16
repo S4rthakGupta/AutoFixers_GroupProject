@@ -53,7 +53,7 @@
                 <label for="phone">Phone number:</label>
                 <input type="text" id="phone" name="phone" placeholder="Enter the phone number" required>
     
-                <button class="success" type="submit">Submit</button>
+                <button class="submit-btn" type="submit">Submit</button>
             </form>
 
             <form class="responsive-form" id="edit-form" action="../UpdateCustomer.php" method="post" style="display: none;">
@@ -68,7 +68,7 @@
                 <label for="editphone">Phone number:</label>
                 <input type="text" id="editphone" name="editphone" placeholder="Enter the phone number" required>
     
-                <button class="primary" type="submit">Edit</button>
+                <button class="submit-btn" type="submit">Edit</button>
                 <input type="hidden" id="editId" name="editId">
             </form>
         </div>

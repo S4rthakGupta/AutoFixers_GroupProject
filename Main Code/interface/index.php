@@ -54,7 +54,7 @@
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" step="0.01" placeholder="Enter price" required>
     
-                <button id="submit-button" class="success" type="submit">Submit</button>
+                <button id="submit-button" class="submit-btn" type="submit">Submit</button>
                 
             </form>
 
@@ -73,7 +73,7 @@
                 <label for="price">Price:</label>
                 <input type="number" id="editprice" name="editprice" step="0.01" placeholder="Enter price" required>
     
-                <button type="submit" class="primary" id="edit-button">Edit</button>
+                <button type="submit" class="submit-btn" id="edit-button">Edit</button>
                 <input style="visibility: hidden;" type="text" id="hdnId" name="hdnId">
             </form>
         </div>

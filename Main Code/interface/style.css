@@ -60,19 +60,42 @@
     color: #1743e3;
   }
 
-  button {
-    background: #003d7e;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+
+
+.submit-btn {
+  padding: 10px 28px;
+  background: #1743e3;
+  border: 2px solid #1743e3;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-button:hover {
-    background: #003d7e;
+.submit-btn:hover {
+  background: transparent;
+  color: #1743e3;
 }
+
+.another-btn {
+  padding: 10px 28px;
+  background: #e31717;
+  border: 2px solid #ee0606;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.another-btn:hover {
+  background: transparent;
+  color: #ff0404;
+}
+/* Styling for conta
 
 
 
@@ -130,31 +153,24 @@ select {
     cursor: pointer;
 }
 
-button {
+.font {
     padding: 12px;
     border: none;
     color: white;
+    background: #e31717;
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button.success {
-    background-color: #ff0000;
+.font:hover {
+  background: red;
+  color: #ffffff;
+  border: 2px solid red;
 }
 
-button.success:hover {
-    background-color: #383838;
-}
 
-button.primary {
-    background-color: #0e05b4;
-}
-
-button.primary:hover {
-    background-color: #383838;
-}
 
 .formProduct {
     margin-bottom: 30px;
@@ -212,12 +228,7 @@ button.primary:hover {
     background-color: #e9ecef;
 }
 
-/* Buttons container */
-.buttons-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
+
 
 .footer {
     background: #000000;
