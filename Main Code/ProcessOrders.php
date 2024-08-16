@@ -90,10 +90,10 @@ $this->Cell(0, 15, 'AUTO-FIXERS', 0, 1, 'L'); // Align text to the left with lar
         $this->SetFont('Arial', 'I', 8);
         
         // Footer text (Names and IDs)
-        $this->Cell(0, 3, 'Shakila Samaradiwakara 8886070 | Sarthak Gupta 8971797 |  8971294', 0, 1, 'C');
+        $this->Cell(0, 3, 'Shakila Samaradiwakara 8886070 | Sarthak Gupta 8971797 | Abhishek Chachad 8971294', 0, 1, 'C');
         
         // Page number
-        $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
+        $this->Cell(0, 10, 'Page ' . $this->PageNo() . '', 0, 0, 'C');
     }
 
     // Invoice header
