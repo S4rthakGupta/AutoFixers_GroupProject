@@ -29,7 +29,7 @@
             <a href="index.php" data-index="1">Product Data</a>
             <a href="customers.php" class="active" data-index="2" > Customer Information</a>
             <a href="invoice_pdf.php" data-index="3">Invoice Generation (PDF)</a>
-            <button onclick="toggleFontSize()">Default Font Size: Medium</button>
+            <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
             </nav>
     </header>
         
