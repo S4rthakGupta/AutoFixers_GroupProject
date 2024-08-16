@@ -7,17 +7,17 @@
     <title>Add/Edit Parts</title>
     <script>
         function fneditItem(itemId, itemName, trademark, description, price) {
-            // Set the values of the form fields
+            //This is where we will set the values of the form fields
             document.getElementById('hdnId').value = itemId;
             document.getElementById('editmodel').value = itemName;
             document.getElementById('editTrademark').value = trademark;
             document.getElementById('editdescription').value = description;
             document.getElementById('editprice').value = price;
 
-            // Show the hidden Edit form
+            //Here we can show the hidden Edit form
             document.getElementById('edit-form').style.display = 'block';
 
-            // Disable the insert form
+            //Here we can disable the insert form
             document.getElementById('insert-form').style.display = 'none';
         }
 
@@ -41,7 +41,7 @@
         <div class="formProduct">
             <form class="responsive-form" id="insert-form" action="../SaveItems.php" method="post">
                 <h2>Insert Part Details</h2>
-    
+                <!-- FORM FOR INSERTING THE PRODUCT DETAILS -->
                 <label for="model">Part Name:</label>
                 <input type="text" id="model" name="model" placeholder="Enter item name" required>
     
@@ -57,7 +57,7 @@
                 <button id="submit-button" class="submit-btn" type="submit">Submit</button>
                 
             </form>
-
+            <!-- FORM FOR UPDATING THE PRODUCT DETAILS -->
             <form class="responsive-form" style="display: none" id="edit-form" action="../UpdateItem.php" method="post">
                 <h2>Edit Part Details</h2>
                 
@@ -89,22 +89,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Fetch data from mysql table -->
+                    <!-- HERE WE ARE FETCHING THE DATA FROM THE DATABASE-->
                     <?php include '../GetItems.php'; ?>
                 </tbody>
             </table>
         </div>
     </main>
-<!--HSHSHH-->
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>About</h2>
-                <!-- It has the same logo as the navbar but with a different colour. -->
                 <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
                 <p>is dedicated to providing an exceptional car service experience</p>
             </div>
-            <!-- These are the links which are same as navbar. -->
+            <!-- Here are the links which are same as navba - FOR CONSISTENCY -->
             <div class="footer-section links">
                 <h2>Quick Links</h2>
                 <ul>
@@ -122,7 +121,7 @@
 
             </div>
         </div>
-        <!-- A copyright mark and a text on the footer. -->
+        <!-- FOOTER SECTION -->
         <div class="footer-bottom">
             &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
