@@ -1,27 +1,26 @@
 <?php
-
-// Include database connection
+// We need this to connect to out database
 include 'ConnectDB.php';
 
-// Retrieve POST data
+//Linking the variables to the post done by edit function
 $customerId = $_POST['editId'];
 $name = $_POST['editname'];
 $email = $_POST['editemail'];
 $phone = $_POST['editphone'];
 
-// Prepare and bind
+// Here we will UPDATE the items into the database using the UPDATE Query - Preparing and binding the data
 $stmt = $conn->prepare("UPDATE Customers SET CustomerName=?, Email=?, Phone=? WHERE CustomerID=?");
 $stmt->bind_param("sssi", $name, $email, $phone, $customerId);
 
-// Execute the query
+// Here we will execute the query and go to CUSTOMERS.php page
 if ($stmt->execute()) {
-    header("Location: interface/customers.php"); // Replace "success.php" with your desired page
+    header("Location: interface/customers.php");
     exit;
 } else {
     echo "Error updating record: " . $stmt->error;
 }
 
-// Close statement and connection
+//Below we are closing statement and connection
 $stmt->close();
 $conn->close();
 ?>
