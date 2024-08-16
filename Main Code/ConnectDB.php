@@ -9,7 +9,7 @@ $db="Transformers_autofixers";
 // Connect Database using above parameters
 $conn=mysqli_connect($host,$username,$pass,$db);
 
-// Display Db connectivity error
+// Display DB connectivity error
 if(!$conn){
 	die("Database connection error");
 }

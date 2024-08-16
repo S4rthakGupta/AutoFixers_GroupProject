@@ -7,6 +7,8 @@
     <link href="style.css" rel="stylesheet">
     <title>PDF Generation</title>
     <style>
+
+        /* CSS Styling to Target Styling for Events */
         .formProduct {
             max-width: 1200px;
             margin: auto;
@@ -80,6 +82,7 @@
 <header class="header">
         <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
 
+        <!-- This is the navbar of the invoice page. -->
         <nav class="navbar">
             <a href="index.php" data-index="1">Product Data</a>
             <a href="customers.php" data-index="2" > Customer Information</a>
