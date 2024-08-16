@@ -1,9 +1,3 @@
-<!-- 
-    Shakila Samaradiwakara 8886070 
-    Sarthak Gupta 8971797 
-    Abhishek Chachad 8971294     
--->
-
 <?php
 // We need this to connect to out database
 include 'ConnectDB.php';
