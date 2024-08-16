@@ -48,6 +48,31 @@
         .buttons-container button {
             width: 48%;
         }
+
+        .danger {
+            background-color: #e74c3c; 
+            color: #fff; 
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            font-size: 14px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        .danger:hover {
+            background-color: #c0392b; 
+        }
+
+        .danger:active {
+            background-color: #a93226; 
+            transform: scale(0.98); 
+        }
+
+        .danger:focus {
+            outline: none;
+            box-shadow: 0 0 5px #e74c3c;
+        }
     </style>
 </head>
 
