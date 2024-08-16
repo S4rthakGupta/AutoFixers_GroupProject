@@ -3,12 +3,13 @@
 //include connection file 
 include "ConnectDB.php";
 
-// Fetch data from the database
+// Get specfic columns from Parts table and execute the query on second line below
 $sql = "SELECT PartID, PartName, Trademark, PartDescription, Price FROM Parts";
 $result = $conn->query($sql);
 
-// Output data in a table
+// Check if there are any records returned from the query
 if ($result->num_rows > 0) {
+    // Using while loop for setting the data of each row
     while($row = $result->fetch_assoc()) {
         $PartID = htmlspecialchars($row["PartID"], ENT_QUOTES, 'UTF-8');
         $PartName = htmlspecialchars($row["PartName"], ENT_QUOTES, 'UTF-8');
@@ -26,6 +27,7 @@ if ($result->num_rows > 0) {
               </tr>";
     }
 } else {
+    // Display No items found if no records returned from database
     echo "<tr><td colspan='4'>No items found</td></tr>";
 }
 
