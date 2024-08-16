@@ -4,7 +4,7 @@
 $host="localhost";
 $username="root";
 $pass="";
-$db="auto_fixers";
+$db="Transformers_autofixers";
  
 $conn=mysqli_connect($host,$username,$pass,$db);
 if(!$conn){

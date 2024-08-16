@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS auto_fixers;
-USE auto_fixers;
+CREATE DATABASE IF NOT EXISTS Transformers_autofixers;
+USE Transformers_autofixers;
 CREATE TABLE IF NOT EXISTS Customers (
     CustomerID INT AUTO_INCREMENT PRIMARY KEY,
     CustomerName VARCHAR(255) NOT NULL,

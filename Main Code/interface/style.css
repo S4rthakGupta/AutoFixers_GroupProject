@@ -31,7 +31,7 @@ body {
 .logo {
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   text-decoration: none;
-  color: blue;
+  color: rgb(17, 4, 54);
   font-family: "Anton SC", sans-serif;
   font-weight: 800;
   opacity: 0;
