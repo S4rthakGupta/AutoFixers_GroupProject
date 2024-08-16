@@ -147,11 +147,9 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>About</h2>
-                <!-- It has the same logo as the navbar but with a different colour. -->
                 <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
                 <p>is dedicated to providing an exceptional car service experience</p>
             </div>
-            <!-- These are the links which are same as navbar. -->
             <div class="footer-section links">
                 <h2>Quick Links</h2>
                 <ul>
@@ -169,7 +167,6 @@
 
             </div>
         </div>
-        <!-- A copyright mark and a text on the footer. -->
         <div class="footer-bottom">
             &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
