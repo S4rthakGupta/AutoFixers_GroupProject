@@ -6,11 +6,11 @@
     <link href="style.css" rel="stylesheet" >
     <title>Add/Edit Parts</title>
     <script>
-        function fneditItem(itemId, itemName, brand, description, price) {
+        function fneditItem(itemId, itemName, trademark, description, price) {
             // Set the values of the form fields
             document.getElementById('hdnId').value = itemId;
             document.getElementById('editmodel').value = itemName;
-            document.getElementById('editbrand').value = brand;
+            document.getElementById('editTrademark').value = trademark;
             document.getElementById('editdescription').value = description;
             document.getElementById('editprice').value = price;
 
@@ -45,8 +45,8 @@
                 <label for="model">Part Name:</label>
                 <input type="text" id="model" name="model" placeholder="Enter item name" required>
     
-                <label for="brand">Trademark:</label>
-                <input type="text" id="brand" name="brand" placeholder="Enter brand name" required>
+                <label for="trademark">Trademark:</label>
+                <input type="text" id="trademark" name="trademark" placeholder="Enter trademark name" required>
     
                 <label for="description">Part Description:</label>
                 <input type="text" id="description" name="description" placeholder="Enter the description" required>
@@ -64,8 +64,8 @@
                 <label for="model">Part Name:</label>
                 <input type="text" id="editmodel" name="editmodel" placeholder="Enter item name" required>
     
-                <label for="brand">Trademark:</label>
-                <input type="text" id="editbrand" name="editbrand" placeholder="Enter brand name" required>
+                <label for="trademark">Trademark:</label>
+                <input type="text" id="editTrademark" name="editTrademark" placeholder="Enter trademark name" required>
     
                 <label for="description">Part Description:</label>
                 <input type="text" id="editdescription" name="editdescription" placeholder="Enter the description" required>

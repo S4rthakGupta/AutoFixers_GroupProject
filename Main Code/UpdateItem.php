@@ -8,13 +8,13 @@ include "ConnectDB.php";
 
 $partID = $_POST['hdnId'];
 $partName = $_POST['editmodel'];
-$brand = $_POST['editbrand'];
+$trademark = $_POST['editTrademark'];
 $description = $_POST['editdescription'];
 $price = $_POST['editprice'];
 
 // Prepare and bind
-$stmt = $conn->prepare("UPDATE Parts SET PartName=?,Brand=?, PartDescription=?, Price=? WHERE PartID=?");
-$stmt->bind_param("sssii", $partName, $brand, $description, $price, $partID); //changed
+$stmt = $conn->prepare("UPDATE Parts SET PartName=?,Trademark=?, PartDescription=?, Price=? WHERE PartID=?");
+$stmt->bind_param("sssii", $partName, $trademark, $description, $price, $partID); //changed
 
 // Execute the query
 if ($stmt->execute()) {

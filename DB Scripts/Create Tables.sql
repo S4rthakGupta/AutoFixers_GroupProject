@@ -15,8 +15,7 @@ CREATE TABLE IF NOT EXISTS Orders (
 CREATE TABLE IF NOT EXISTS Parts (
     PartID INT AUTO_INCREMENT PRIMARY KEY,
     PartName VARCHAR(255) NOT NULL,
-    Brand VARCHAR(255) NOT NULL,
-    -- Added Brand column
+    Trademark VARCHAR(255) NOT NULL,
     PartDescription TEXT,
     Price DECIMAL(10, 2) NOT NULL
 );
