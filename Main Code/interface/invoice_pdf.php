@@ -8,7 +8,7 @@
     <title>PDF Generation</title>
     <style>
         .formProduct {
-            max-width: 600px;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -52,17 +52,15 @@
 </head>
 
 <body>
-    <header>
-        <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
-            <span>Auto Fixers</span>
-        </div>
-        <ul>
-            <li><a href="index.php">Product Data</a></li>
-            <li><a href="customers.php">Customer Information</a></li>
-            <li><a href="invoice_pdf.php">Invoice Generation (PDF)</a></li>
+<header class="header">
+        <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+
+        <nav class="navbar">
+            <a href="index.php" data-index="1">Product Data</a>
+            <a href="customers.php" data-index="2" > Customer Information</a>
+            <a href="invoice_pdf.php" class="active" data-index="3">Invoice Generation (PDF)</a>
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
-        </ul>
+            </nav>
     </header>
 
     <main>
@@ -70,7 +68,7 @@
             <p>Auto Fixers</p>
         </div>
         <div class="formProduct">
-            <form action="../ProcessOrders.php" method="post" class="responsive-form">
+            <form class="responsive-form" action="../ProcessOrders.php" method="post" >
                 <h2>Select Customer and Products for Invoice</h2>
 
                 <label for="customer">Choose Customer:</label>
@@ -113,30 +111,40 @@
                 </div>
 
                 <div class="buttons-container">
-                    <button class="primary" type="button" onclick="addItemRow()">Add Another Item</button>
-                    <button class="success" type="submit">Submit Order</button>
+                    <button class="another-btn" type="button" onclick="addItemRow()">Add Another Item</button>
+                    <button class="submit-btn" type="submit">Submit Order</button>
                 </div>
             </form>
         </div>
     </main>
 
-    <footer>
-        <div class="footerDiv">
-            <ul>
-                <li>8886070 Shakila Samaradiwakara</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Sarthak Gupta</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Abhishek Chachad</li>
-                <li></li>
-            </ul>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About</h2>
+                <!-- It has the same logo as the navbar but with a different colour. -->
+                <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+                <p>is dedicated to providing an exceptional car service experience</p>
+            </div>
+            <!-- These are the links which are same as navbar. -->
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.php">Product Data</a></li>
+                    <li><a href="customers.php">Customer Information</a></li>
+                    <li><a href="invoice_pdf.php">Invoice Generation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone-alt"></i> +1 365-456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cardeals.com</p>
+            </div>
         </div>
-        <div class="copyright">
-        <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
+        <!-- A copyright mark and a text on the footer. -->
+        <div class="footer-bottom">
+            &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
     </footer>
 

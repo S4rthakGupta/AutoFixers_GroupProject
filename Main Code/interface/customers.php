@@ -22,18 +22,20 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
-            <span>Auto Fixers Shop</span>
-        </div>
-        <ul>
-            <li><a href="index.php">Product Data</a></li>
-            <li><a href="customers.php">Customer Information</a></li>
-            <li><a href="invoice_pdf.php">Invoice Generation (PDF)</a></li>
+    <header class="header">
+        <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+
+        <nav class="navbar">
+            <a href="index.php" data-index="1">Product Data</a>
+            <a href="customers.php" class="active" data-index="2" > Customer Information</a>
+            <a href="invoice_pdf.php" data-index="3">Invoice Generation (PDF)</a>
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
-        </ul>
+            </nav>
     </header>
+        
+        
+       
+
     <main>
         <div class="banner">
             <p>Auto Fixers</p>
@@ -51,7 +53,7 @@
                 <label for="phone">Phone number:</label>
                 <input type="text" id="phone" name="phone" placeholder="Enter the phone number" required>
     
-                <button class="success" type="submit">Submit</button>
+                <button class="submit-btn" type="submit">Submit</button>
             </form>
 
             <form class="responsive-form" id="edit-form" action="../UpdateCustomer.php" method="post" style="display: none;">
@@ -66,7 +68,7 @@
                 <label for="editphone">Phone number:</label>
                 <input type="text" id="editphone" name="editphone" placeholder="Enter the phone number" required>
     
-                <button class="primary" type="submit">Edit</button>
+                <button class="submit-btn" type="submit">Edit</button>
                 <input type="hidden" id="editId" name="editId">
             </form>
         </div>
@@ -88,23 +90,33 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footerDiv">
-            <ul>
-                <li>Sarthak Gupta</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Shakila Samardiwakara</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Abhishek Chachad</li>
-                <li></li>
-            </ul>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About</h2>
+                <!-- It has the same logo as the navbar but with a different colour. -->
+                <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+                <p>is dedicated to providing an exceptional car service experience</p>
+            </div>
+            <!-- These are the links which are same as navbar. -->
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.php">Product Data</a></li>
+                    <li><a href="customers.php">Customer Information</a></li>
+                    <li><a href="invoice_pdf.php">Invoice Generation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone-alt"></i> +1 365-456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cardeals.com</p>
+            </div>
         </div>
-        <div class="copyright">
-            <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
+        <!-- A copyright mark and a text on the footer. -->
+        <div class="footer-bottom">
+            &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
     </footer>
     <script>

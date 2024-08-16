@@ -6,11 +6,11 @@
     <link href="style.css" rel="stylesheet" >
     <title>Add/Edit Parts</title>
     <script>
-        function fneditItem(itemId, itemName, brand, description, price) {
+        function fneditItem(itemId, itemName, trademark, description, price) {
             // Set the values of the form fields
             document.getElementById('hdnId').value = itemId;
             document.getElementById('editmodel').value = itemName;
-            document.getElementById('editbrand').value = brand;
+            document.getElementById('editTrademark').value = trademark;
             document.getElementById('editdescription').value = description;
             document.getElementById('editprice').value = price;
 
@@ -24,17 +24,15 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="storeLogo">
-            <img src="../storelogo.jpg" alt="Logo - Auto Fixers">
-            <span>Auto Fixers</span>
-        </div>
-        <ul>
-            <li><a href="index.php">Product Data</a></li>
-            <li><a href="customers.php">Customer Information</a></li>
-            <li><a href="invoice_pdf.php">Invoice Generation (PDF)</a></li>
+<header class="header">
+        <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+
+        <nav class="navbar">
+            <a href="index.php" class="active" data-index="1">Product Data</a>
+            <a href="customers.php" data-index="2" > Customer Information</a>
+            <a href="invoice_pdf.php" data-index="3">Invoice Generation (PDF)</a>
             <button class="font" onclick="toggleFontSize()">Default Font Size: Medium</button>
-        </ul>
+            </nav>
     </header>
     <main>
         <div class="banner">
@@ -47,8 +45,8 @@
                 <label for="model">Part Name:</label>
                 <input type="text" id="model" name="model" placeholder="Enter item name" required>
     
-                <label for="brand">Trademark:</label>
-                <input type="text" id="brand" name="brand" placeholder="Enter brand name" required>
+                <label for="trademark">Trademark:</label>
+                <input type="text" id="trademark" name="trademark" placeholder="Enter trademark name" required>
     
                 <label for="description">Part Description:</label>
                 <input type="text" id="description" name="description" placeholder="Enter the description" required>
@@ -56,7 +54,7 @@
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" step="0.01" placeholder="Enter price" required>
     
-                <button id="submit-button" class="success" type="submit">Submit</button>
+                <button id="submit-button" class="submit-btn" type="submit">Submit</button>
                 
             </form>
 
@@ -66,8 +64,8 @@
                 <label for="model">Part Name:</label>
                 <input type="text" id="editmodel" name="editmodel" placeholder="Enter item name" required>
     
-                <label for="brand">Trademark:</label>
-                <input type="text" id="editbrand" name="editbrand" placeholder="Enter brand name" required>
+                <label for="trademark">Trademark:</label>
+                <input type="text" id="editTrademark" name="editTrademark" placeholder="Enter trademark name" required>
     
                 <label for="description">Part Description:</label>
                 <input type="text" id="editdescription" name="editdescription" placeholder="Enter the description" required>
@@ -75,7 +73,7 @@
                 <label for="price">Price:</label>
                 <input type="number" id="editprice" name="editprice" step="0.01" placeholder="Enter price" required>
     
-                <button type="submit" class="primary" id="edit-button">Edit</button>
+                <button type="submit" class="submit-btn" id="edit-button">Edit</button>
                 <input style="visibility: hidden;" type="text" id="hdnId" name="hdnId">
             </form>
         </div>
@@ -98,23 +96,33 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footerDiv">
-            <ul>
-                <li>Sarthak Gupta</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Abhishek Chachad</li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Shakila Samardiwakara</li>
-                <li></li>
-            </ul>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About</h2>
+                <!-- It has the same logo as the navbar but with a different colour. -->
+                <a href="index.html" class="logo">Auto<span class="logo-span">Fixers</span></a>
+                <p>is dedicated to providing an exceptional car service experience</p>
+            </div>
+            <!-- These are the links which are same as navbar. -->
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.php">Product Data</a></li>
+                    <li><a href="customers.php">Customer Information</a></li>
+                    <li><a href="invoice_pdf.php">Invoice Generation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone-alt"></i> +1 365-456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cardeals.com</p>
+            </div>
         </div>
-        <div class="copyright">
-        <p>Copyright 2024 | &copy;Auto Fixers | All rights reserved</p>
+        <!-- A copyright mark and a text on the footer. -->
+        <div class="footer-bottom">
+            &copy; 2024 Auto-Fixers | All Rights Reserved
         </div>
     </footer>
     <script>
