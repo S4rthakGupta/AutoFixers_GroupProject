@@ -1,7 +1,6 @@
 /* Importing the google fonts to use it for the fonts in the website pages. */
 @import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Resetting defaul browser styles and setting the box sizing as the border-box as well as the font-family which will be used in the whole body. */
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +8,10 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Giving the background as the white colour. */
 body {
   background: #ffffff;
 }
 
-/* Styling for the header as well as navigation starts here. */
-/* This is consistent through all web pages. */
 .header {
   top: 0;
   left: 0;
@@ -60,8 +56,6 @@ body {
   color: #1743e3;
 }
 
-
-
 .submit-btn {
   padding: 10px 28px;
   background: #1743e3;
@@ -96,12 +90,6 @@ body {
   color: #ff0404;
 }
 
-/* Styling for conta
-
-
-
-
-/* Styling the banner */
 .banner {
   background-color: #003366;
   color: #ffffff;
@@ -110,14 +98,12 @@ body {
   font-size: 1.5em;
 }
 
-/* Main container */
 main {
   max-width: 1200px;
   margin: 20px auto;
   padding: 10px;
 }
 
-/* General form styling */
 .responsive-form {
   background-color: #f7f7f7;
   padding: 20px;
@@ -171,12 +157,9 @@ select {
   border: 2px solid red;
 }
 
-
-
 .formProduct {
   margin-bottom: 30px;
 }
-
 
 #items-container {
   margin-bottom: 15px;
@@ -196,7 +179,6 @@ select {
   min-width: 200px;
 }
 
-/* Table styling */
 .ListData {
   margin-top: 20px;
 }
@@ -229,8 +211,7 @@ select {
   background-color: #e9ecef;
 }
 
-
-
+/* This is the styling for footer. */
 .footer {
   background: #000000;
   color: #fff;
@@ -276,15 +257,10 @@ select {
   font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
-
-
-
-
 .footer-section a {
   color: #fff;
   text-decoration: none;
 }
-
 
 .footer-section .links ul {
   list-style: none;
@@ -310,7 +286,7 @@ select {
   border-top: 1px solid #444;
 }
 
-
+/* 1st Media Query Breakpoint */
 @media (max-width: 768px) {
   .header {
     padding: 20px 5%;
@@ -321,7 +297,6 @@ select {
     align-items: center;
     padding-bottom: 15px;
   }
-
 
   .another-btn {
     margin-bottom: 10px;
@@ -345,7 +320,6 @@ select {
   .footer-section {
     padding: 10px;
   }
-
 
   h2 {
     font-size: 1.5em;
@@ -372,6 +346,7 @@ select {
   }
 }
 
+/* 2nd Media Query Breakpoint */
 @media (max-width: 480px) {
   .banner {
     font-size: 1.2em;
@@ -401,6 +376,7 @@ select {
   }
 }
 
+/* Animations for the UI */
 @keyframes slideRight {
   from {
     transform: translateX(-30px);
