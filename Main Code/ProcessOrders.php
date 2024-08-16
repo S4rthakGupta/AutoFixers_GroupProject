@@ -345,12 +345,12 @@ $shipping = 10; // Example value, adjust or fetch from your data
 
 // Add totals to PDF
 $pdf->InvoiceTotals([
-    'Subtotal' => $subtotal,
-    'Discount' => $discount,
+    'subtotal' => $subtotal,
+    'discount' => $discount,
     'subtotalLessDiscount' => $subtotalLessDiscount,
     'shipping' => $shipping,
-    'Tax' => $tax,
-    'Total' => $total
+    'tax' => $tax,
+    'total' => $total
 ]);
 
 // Output PDF
