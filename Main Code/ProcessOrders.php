@@ -49,13 +49,17 @@ foreach ($parts as $index => $partID) {
 // Generate PDF
 class PDF extends FPDF
 {
-    // Add a logo at the top
-    function AddLogo()
-    {
-        $this->SetFont('Arial', 'B', 20);
-        $this->Cell(0, 10, 'INVOICE', 0, 1, 'C');
-        $this->Ln(20);
-    }
+   // Add a logo at the top
+function AddLogo()
+{
+    // Add the logo image
+    $this->Image('auto-logo.png', 10, 10, 30); // Adjust the x, y position, and size as needed
+
+    // Move to the right to make space for the logo
+    $this->SetFont('Arial', 'B', 20);
+    $this->Cell(0, 10, 'INVOICE', 0, 1, 'C');
+    $this->Ln(20);
+}
 
     // Page footer
     function Footer()
@@ -67,7 +71,7 @@ class PDF extends FPDF
         $this->SetFont('Arial', 'I', 8);
         
         // Footer text (Names and IDs)
-        $this->Cell(0, 3, 'Shakila Samaradiwakara 8886070 | Sarthak Gupta 8971797 | Abhishek Chachad 8971294', 0, 1, 'C');
+        $this->Cell(0, 3, 'Shakila Samaradiwakara 8886070 | Sarthak Gupta 8971797 |  8971294', 0, 1, 'C');
         
         // Page number
         $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
@@ -100,9 +104,18 @@ class PDF extends FPDF
     // Table header
     function TableHeader()
     {
+        // Add the "BILL TO" title above the table
+        $this->SetFont('Arial', 'B', 14);
+        $this->SetTextColor(0, 0, 255); // Set text color to blue (RGB: 0, 0, 255)
+        $this->Cell(0, 10, 'BILL TO', 0, 1, 'L');
+        $this->Ln(5); // Add some space after the title
+    
+        // Set the font and colors for the table header
         $this->SetFont('Arial', 'B', 12);
-        $this->SetFillColor(255, 102, 102);
-        $this->SetTextColor(0, 0, 0);
+        $this->SetFillColor(173, 216, 230); // Set fill color to light blue (RGB: 173, 216, 230)
+        $this->SetTextColor(0, 0, 255); // Set text color to blue (RGB: 0, 0, 255)
+    
+        // Table headers
         $this->Cell(30, 7, 'ITEM NAME', 1, 0, 'C', true);
         $this->Cell(70, 7, 'DESCRIPTION', 1, 0, 'C', true);
         $this->Cell(25, 7, 'UNIT COST', 1, 0, 'C', true);
@@ -111,6 +124,8 @@ class PDF extends FPDF
         $this->Cell(30, 7, 'AMOUNT', 1, 0, 'C', true);
         $this->Ln();
     }
+    
+    
 
     // Table row
     function TableRow($item)
