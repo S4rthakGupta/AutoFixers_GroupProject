@@ -225,14 +225,56 @@ class PDF extends FPDF
 
     // Invoice totals
     function InvoiceTotals($totals)
-    {
-        $this->Ln(10);
-        $this->SetFont('Arial', 'B', 12);
-        $this->SetTextColor(50, 50, 50);
-        $this->Cell(0, 6, 'SUBTOTAL: $' . number_format($totals['Subtotal'], 2), 0, 1, 'R');
-        $this->Cell(0, 6, 'TAX (13%): $' . number_format($totals['Tax'], 2), 0, 1, 'R');
-        $this->Cell(0, 6, 'TOTAL: $' . number_format($totals['Total'], 2), 0, 1, 'R');
-    }
+{
+    $this->Ln(10); // Add space before totals
+    $this->SetFont('Arial', 'B', 12);
+    $this->SetTextColor(50, 50, 50);
+
+    // Define line length and right margin
+    $lineLength = 60; // Shorter length of the line
+    $rightMargin = 10; // Right margin from the edge of the page
+
+    // Get page width and calculate x start and end positions
+    $pageWidth = $this->GetPageWidth();
+    $xEnd = $pageWidth - $rightMargin;
+    $xStart = $xEnd - $lineLength;
+
+    // Display subtotal
+    $this->Cell(0, 6, 'SUBTOTAL: $' . number_format($totals['Subtotal'], 2), 0, 1, 'R');
+    $this->Ln(2); // Add a small space after the row
+    $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
+
+    // Display discount
+    $this->Ln(5); // Add space before discount
+    $this->Cell(0, 6, 'DISCOUNT: $' . number_format($totals['Discount'], 2), 0, 1, 'R');
+    $this->Ln(2); // Add a small space after the row
+    $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
+
+    // Display subtotal less discount
+    $this->Ln(5); // Add space before subtotal less discount
+    $this->Cell(0, 6, 'SUBTOTAL LESS DISCOUNT: $' . number_format($totals['SubtotalLessDiscount'], 2), 0, 1, 'R');
+    $this->Ln(2); // Add a small space after the row
+    $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
+
+    // Display shipping/landing
+    $this->Ln(5); // Add space before shipping/landing
+    $this->Cell(0, 6, 'SHIPPING/LANDING: $' . number_format($totals['Shipping'], 2), 0, 1, 'R');
+    $this->Ln(2); // Add a small space after the row
+    $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
+
+    // Display tax
+    $this->Ln(5); // Add space before tax
+    $this->Cell(0, 6, 'TAX (13%): $' . number_format($totals['Tax'], 2), 0, 1, 'R');
+    $this->Ln(2); // Add a small space after the row
+    $this->Line($xStart, $this->GetY(), $xEnd, $this->GetY()); // Draw a line
+
+    // Display total
+    $this->Ln(5); // Add space before total
+    $this->Cell(0, 6, 'TOTAL: $' . number_format($totals['Total'], 2), 0, 1, 'R');
+}
+
+    
+    
 }
 
 // Initialize PDF
@@ -282,10 +324,16 @@ while ($item = $result->fetch_assoc()) {
 // Calculate tax and total
 $tax = $subtotal * 0.13;
 $total = $subtotal + $tax;
+$discount = 0; // You can adjust this value or fetch it from your data
+$subtotalLessDiscount = 0;
+$shipping = 10; // Example value, adjust or fetch from your data
 
 // Add totals to PDF
 $pdf->InvoiceTotals([
     'Subtotal' => $subtotal,
+    'Discount' => $discount,
+    'subtotalLessDiscount' => $subtotalLessDiscount,
+    'shipping' => $shipping,
     'Tax' => $tax,
     'Total' => $total
 ]);
